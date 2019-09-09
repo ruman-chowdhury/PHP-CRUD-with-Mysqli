@@ -1,0 +1,35 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat";
+}
+
+/*************index**************/
+nav h1{
+	color: #fff;
+	margin: auto;
+}
+
+.content_container{
+	margin-top: 5rem;
+}
+
+form.custom_form{
+	max-width: 43%;
+    margin: auto;
+ 	padding: 2em;
+}
+
+p.error_msg{
+	padding: 10rem;
+	font-size: xx-large;
+}
+
+/*******************media query*******************/
+@media (max-width: 991px){
+	.container{
+		padding: 3% 0;
+		text-align: center;
+		
+	}
+}
