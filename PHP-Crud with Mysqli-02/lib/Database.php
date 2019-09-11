@@ -4,7 +4,7 @@
 		private $servername ="localhost";
 		private $db_user ="root";
 		private $db_pass ="";
-		private $db_name ="db_employee";
+		private $db_name ="db_user";
 
 		public $conn;
 		public $error;

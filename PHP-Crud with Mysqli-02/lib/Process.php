@@ -13,7 +13,7 @@
 		//==========select data==============
 		public function selectData(){
 			
-			$query = "SELECT * FROM mobiles ORDER BY Id ASC";
+			$query = "SELECT * FROM tbl_userInfo ORDER BY Id ASC";
 			
 			$result = $this->db->conn->query($query) or die($this->db->conn->error .__LINE__);
 
@@ -57,7 +57,7 @@
 			}
 
 
-			$query = "INSERT INTO mobiles(Name, Email, Phone)
+			$query = "INSERT INTO tbl_userInfo(Name, Email, Phone)
 					  VALUES('$name', '$email', '$phone')";
 
 			$insert_row = $this->db->conn->query($query) or die($this->db->conn->error .__LINE__);
@@ -70,7 +70,7 @@
 
 		//check email,it is already used or not
 		function checkEmail($email){
-			$query = "SELECT Email FROM mobiles WHERE Email=$email LIMIT 1";
+			$query = "SELECT Email FROM tbl_userInfo WHERE Email=$email LIMIT 1";
 			$result = $this->db->conn->query($query); 
 
 			if (var_dump($result) > 0){
@@ -87,7 +87,7 @@
 
 		//==========update data==============
 		public function getEmployeeById($id){
-			$query = "SELECT * FROM mobiles WHERE Id=$id ";
+			$query = "SELECT * FROM tbl_userInfo WHERE Id=$id ";
 			
 			$query = $this->db->conn->query($query) or die($this->db->conn->error.__LINE__);
 			
@@ -120,7 +120,7 @@
 			}
 
 
-			$query = "UPDATE mobiles 
+			$query = "UPDATE tbl_userInfo 
 					 SET Name='$name', Email='$email', Phone='$phone' WHERE Id=$id LIMIT 1";
 
 			$update_row = $this->db->conn->query($query) or die($this->db->conn->error .__LINE__);
@@ -139,7 +139,7 @@
 		//==========delete data==============
 		public function deletetData($id){
 
-			$query = "DELETE FROM mobiles WHERE Id=$id LIMIT 1";
+			$query = "DELETE FROM tbl_userInfo WHERE Id=$id LIMIT 1";
 			$delete_row = $this->db->conn->query($query) or die($this->db->conn->error .__LINE__);
 			
 			header('Location:index.php');
