@@ -114,8 +114,8 @@
 		public function getUserById($userid){
 			$query = "SELECT * FROM tbl_userinfo WHERE Id=$userid LIMIT 1";
 			
-			$result = $this->conn->query($query) or die($this->conn->error .__LINE__);
-			$result = $result->fetch_assoc();
+			$query = $this->conn->query($query) or die($this->conn->error .__LINE__);
+			$result = $query->fetch_assoc();
 			
 			return $result;
 
@@ -126,9 +126,6 @@
 			$name = mysqli_real_escape_string($this->conn, $data['name']);
 			$email = mysqli_real_escape_string($this->conn, $data['email']);
 			$phone = mysqli_real_escape_string($this->conn, $data['phone']);
-
-			$chk_email = $this->checkEmail($email); //method call
-
 
 
 			if ($name =="" OR $email =="" OR $phone ==""){
@@ -143,11 +140,6 @@
 
 			if (filter_var($email,FILTER_VALIDATE_EMAIL) === false){
 				$msg = "<span class='alert alert-danger'><strong>*</strong>Invalid email!</span>" ;
-				return $msg;
-			}
-
-			if ($chk_email == true){
-				$msg = "<span class='alert alert-danger'><strong>*</strong>Email already exist!</span>" ;
 				return $msg;
 			}
 

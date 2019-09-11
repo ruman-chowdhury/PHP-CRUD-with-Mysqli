@@ -4,6 +4,7 @@
 ?>
 
 <?php  
+	//_GET will catch id two times.1)when index to edinInfo.php 2)this page form submission
 	if (isset($_GET['edit'])){
 		$id = $_GET['edit'];
 	}

@@ -59,7 +59,7 @@
 							<td> <?php echo $row['Email']; ?> </td>
 							<td> <?php echo $row['Phone']; ?> </td>
 							<td>
-								<a class="btn btn-outline-secondary btn-sm" href="edituser.php?id=<?php echo $row['Id'];?> ">Edit</a>
+								<a class="btn btn-outline-secondary btn-sm" href="edituser.php?edit=<?php echo $row['Id'];?> ">Edit</a>
 								
 								<a class="btn btn-danger btn-sm" href="index.php?del=<?php echo $row['Id']; ?>" onclick="return confirm('Are you sure to delete?')">Delete</a>
 							</td>

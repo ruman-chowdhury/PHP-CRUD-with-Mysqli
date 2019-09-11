@@ -4,8 +4,8 @@
 ?>
 
 <?php
-	if (isset($_GET['id'])){
-		$userid = (int)$_GET['id'];
+	if (isset($_GET['edit'])){
+		$userid = $_GET['edit'];
 	}
 
 	$db =  new Database();
@@ -40,7 +40,7 @@
 				
 				<div class="card-body custom_card_body">
 					
-					<form action="edituser.php?id=<?php echo $userid;?>" method="POST" accept-charset="utf-8" class="bg-light custom_form">
+					<form action="edituser.php?edit=<?php echo $userid;?>" method="POST" accept-charset="utf-8" class="bg-light custom_form">
 
 						<div class="form-group">
 							<label for="name">Name:</label>
